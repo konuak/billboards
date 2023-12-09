@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>MAIN MENU</title>
+       <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <link  rel="stylesheet" href="/static/bootstrap.css">
+    <link  rel="stylesheet" href="/static/bootstrap.js">
+    <link  rel="stylesheet" href="/static/main.css">
+    <link  rel="stylesheet" href="/static/fonts.css">
+</head>
+<body>
+    <h1 align = 'center' style="font-size: 90px"> Аренда билбордов</h1>
+    <nav class="navbar navbar-expand-lg">
+        <a class="navbar-brand" href="/">
+               <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="white" class="bi bi-houses-fill" viewBox="0 0 16 16">
+                <path d="M7.207 1a1 1 0 0 0-1.414 0L.146 6.646a.5.5 0 0 0 .708.708L1 7.207V12.5A1.5 1.5 0 0 0 2.5 14h.55a2.51 2.51 0 0 1-.05-.5V9.415a1.5 1.5 0 0 1-.56-2.475l5.353-5.354L7.207 1Z"/>
+                <path d="M8.793 2a1 1 0 0 1 1.414 0L12 3.793V2.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v3.293l1.854 1.853a.5.5 0 0 1-.708.708L15 8.207V13.5a1.5 1.5 0 0 1-1.5 1.5h-8A1.5 1.5 0 0 1 4 13.5V8.207l-.146.147a.5.5 0 1 1-.708-.708L8.793 2Z"/>
+            </svg>
+           </a>
+   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+       <span class="navbar-toggler-icon"></span>
+   </button>
+<div class="collapse navbar-collapse justify-content  justify-center " id="navbarSupportedContent">
+     <ul class="navbar-nav mr-4">
+       <li class="nav-item">
+         <a class="nav-link"  href="/db/sql/info">Информация  </a>
+       </li>
+       <li class="nav-item">
+         <a class="nav-link" href=""> Авторизация  </a>
+       </li>
+         <li class="nav-item">
+         <a class="nav-link" href="/db/sql/reports"> Отчеты  </a>
+       </li>
+     </ul>
+</div>
+    </nav>
+    <container>
+
+                <div class="login-container">
+                    <!--
+        <form method="get" action="/db/sql/info">
+        <button class ="btn btn-primary" type="submit" style="margin-top: 10px; margin-left: 880px; width: 100px; height: 60px; position: absolute;"><tp>Назад</tp>
+        </button>
+    </form>
+    -->
+         <form method="get" action="/db/sql/info/find_all/dif2">
+        <button class ="btn btn-primary " type="submit" style="height: 40px; width: 500px;margin-left: 20px;"><tp>Запрос2</tp>  </button>
+    </form>
+    <form method="get" action="/db/sql/info/find_all/dif3">
+        <button class ="btn btn-primary " type="submit" style="height: 40px; width: 500px;margin-top: 10px; margin-left: 20px;"><tp>Запрос3</tp>  </button>
+    </form>
+    <form method="get" action="/db/sql/info/find_all/dif4" >
+        <button class ="btn btn-primary " type="submit" style="height: 40px; width: 500px;margin-top: 10px;margin-left: 20px;"><tp>Запрос4</tp> </button>
+    </form>
+      <form method="get" action="/db/sql/info/find_all/dif5" >
+        <button class ="btn btn-primary " type="submit" style="height: 40px; width: 500px;margin-top: 10px;margin-left: 20px;"><tp>Запрос5</tp> </button>
+    </form>
+</form> </div>
+</container>
+
+</div>
+</body>
+</html>

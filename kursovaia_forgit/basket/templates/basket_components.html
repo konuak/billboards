@@ -1,0 +1,76 @@
+{% macro render_content(items) %}
+
+{% for item in items %}
+<div style="margin-top: 40px; margin-left: 70px; border: 3px solid black; width:200px; height:100%; text-align:center;">
+  <div>Адрес: {{ item["address"] }}</div>
+  <div>Тип рекламы: {{ item["type_bill"] }}</div>
+  <div>Стоимость аренды (в месяц): {{ item["price"] }}</div>
+    <form action="" method="post">
+      <input type="text" id="airdatepicker_{{ item['id_bill'] }}" class="form-control" name = "date_ords">
+  <input type="hidden" id="YMStartsValue_{{ item['id_bill'] }}" value="{{ item['YM_starts'] }}">
+  <input type="hidden" id="YMEndsValue_{{ item['id_bill'] }}" value="{{ item['YM_end'] }}">
+    <input type="hidden" name="id_bill" value="{{ item['id_bill'] }}">
+    <input type="hidden" name="quality" value="{{ item['quality'] }}">
+    <input type="hidden" name="type_bill" value="{{ item['type_bill'] }}">
+    <input type="hidden" name="address" value="{{ item['address'] }}">
+    <input type="hidden" name="size" value="{{ item['size'] }}">
+    <input type="hidden" name="price" value="{{ item['price'] }}">
+    <button class="btn btn-primary btn-dark search" type="submit" style="margin-top: 10px; margin-left: 5px; width: 100px; height: 40px;"> Добавить  </button>
+  </form>
+</div>
+
+<script src="static/air-datepicker.js"></script>
+<script>
+(function(YMStartsValue, YMEndsValue) {
+  var YMStartsArray = YMStartsValue.split(',');
+  var YMEndsArray = YMEndsValue.split(',');
+  var datepicker = new AirDatepicker('#airdatepicker_{{ item['id_bill'] }}', {
+    view: 'months',
+    minView: 'months',
+    minDate: new Date(),
+    dateFormat: 'yyyy-MM',
+    range: {
+ select: true
+    },
+    onRenderCell: function({ date, cellType }) {
+      if (cellType === 'month') {
+        var year = date.getFullYear();
+        var month = date.getMonth();
+        for (var i = 0; i < YMStartsArray.length; i++) {
+          var startYear = parseInt(YMStartsArray[i].split('-')[0]);
+          var startMonth = parseInt(YMStartsArray[i].split('-')[1]) - 1;
+          var endYear = parseInt(YMEndsArray[i].split('-')[0]);
+          var endMonth = parseInt(YMEndsArray[i].split('-')[1]) - 1;
+          var cellDate = new Date(year, month, 1);
+          var startDate = new Date(startYear, startMonth, 1);
+          var endDate = new Date(endYear, endMonth + 1, 0);
+
+          if (cellDate >= startDate && cellDate <= endDate) {
+            return {
+              disabled: true,
+              classes: 'disabled-class',
+              attrs: {
+                title: 'Ячейка отключена'
+              }
+            };
+          }
+        }
+      }
+    }
+  });
+})(document.getElementById('YMStartsValue_{{ item['id_bill'] }}').value, document.getElementById('YMEndsValue_{{ item['id_bill'] }}').value);
+
+</script>
+{% endfor %}
+{% endmacro %}
+
+
+{% macro render_basket(basket) %}
+{% for item_id, item_data in basket.items() %}
+<div style = "border: 3px solid; #0069b5;">
+    <div>Адрес билборда: {{ item_data['address'] }}</div>
+  <div>Итоговая стоимость: {{ item_data['price'] }}</div>
+  <div>Период аренды: {{ item_data['start_ar'] }}</div>
+</div>
+{% endfor %}
+{% endmacro %}

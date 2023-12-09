@@ -1,0 +1,6 @@
+{
+  "director": ["index","auth_app", "db_work_dir"],
+  "manager": ["index","auth_app", "db_work", "reports"],
+  "arendator" :["index","auth_app", "db_work_ex", "basket"],
+  "billboard_owner" : ["index","auth_app", "db_work_ex"]
+}

@@ -1,0 +1,41 @@
+{% extends 'basket_base.html' %}
+
+{% block index %}
+
+{% import 'basket_components.html' as components %}
+
+<div class="container"  >
+    <div class="row">
+        <div class="col-md-7">
+                    <div class="login-container" style = " margin-left: -50px; width: 900px; height: 700px;  overflow-y: scroll;" >
+            <h2 style = " margin-top: 20px; ">Доступные билборды </h2>
+            {% if not items %}
+                <a>Нет доступных товаров</a>
+            {% else %}
+    <div class="row">
+                {{ components.render_content(items=items) }}
+    </div>
+            {% endif %}
+
+        </div>
+        </div>
+        <div class="login-container" style = " margin-left: 900px; width: 300px; height: 1000px;" >
+            <div style = "font-size : 30px; margin-top: 20px; margin-left: 70px; ">Корзина </div>
+            <div style = "margin-top: -50px;  border-bottom: 3px solid black; widht: 10px;">
+<svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="currentColor" class="bi bi-cart" viewBox="0 0 16 16">
+  <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM3.102 4l1.313 7h8.17l1.313-7H3.102zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"/>
+</svg></div>
+            {% if not basket %}
+                <b style = "margin-top: 100px; margin-left: 30px; position: absolute;  font-size: 20px;">Здесь пока пусто...</b>
+            {% else %}
+                {{ components.render_basket(basket=basket) }}
+            <div class="btn btn-primary btn-dark search" style = "height:40px; margin-top: 10px; margin-left: 50px;"><a href="/basket/buy" style = "color : white; margin-top: -10px; ">Забронировать</a></div>
+            <div class="btn btn-primary btn-dark search" style = "height:40px; margin-top: 10px; margin-left: 50px; width: 175px;"><a href="/basket/clear" style = "color : white; margin-top: -10px; ">Очистить</a></div>
+            {% endif %}
+
+        </div>
+
+        </div>
+    </div>
+    </div>
+{% endblock %}
