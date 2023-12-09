@@ -1,0 +1,138 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&display=swap');
+
+
+body{font-family: Playfair Display ;
+    background-color:#f0f8ff ; }
+a{
+    font-size: 20px;
+    color: red;
+
+}
+n{
+    font-size: 20px;
+      margin-top: 30px;
+}
+p{
+
+    font-size: 40px;
+    text-align: center;
+    margin-top: 30px;
+}
+
+pt{
+
+    margin-left: 10px;
+    font-size: 20px;
+}
+
+.navbar{
+    background: #23292d;
+    height: 100px;
+}
+
+.nav-link {
+    color: white;
+    font-size: 25px;
+
+}
+
+container{
+    position: relative;
+    overflow-y: scroll;
+}
+
+.login-container {
+      position: absolute;
+      background-color: #fff;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+      margin-left: 200px;
+      margin-top: 30px;
+      width: 1000px;
+      height: 500px;
+    }
+
+.login-container h2 {
+      text-align: center;
+      font-size: 40px;
+      margin-top: 50px;
+
+    }
+.form-group {
+      margin-left: 25px;
+      font-size: 20px;
+      margin-top: 30px;
+
+    }
+
+.form-group label {
+      display: block;
+      font-weight: bold;
+      margin-bottom: 5px;
+    }
+
+.form-group input {
+      width: 400px;
+      padding: 10px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+}
+
+
+t{
+    position: absolute;
+    font-size: 25px;
+}
+tp{
+    font-size: 25px;
+}
+
+back{
+margin-top: 100px;
+margin-left: 150px;
+width: 20px;
+height: 60px;
+
+}
+
+button{
+margin-top: 100px;
+margin-left: 150px;
+width: 200px;
+height: 60px;
+}
+
+
+
+.table{
+position: absolute;
+width:90%;
+
+margin-left: 20px;
+
+}
+.table-striped{
+            border-color:#1B4F72;
+}
+
+th{
+    font-size: 20px;
+}
+td{
+font-size: 20px;
+
+}
+
+.btn-primary{
+background-color: #23292d !important;
+--bs-btn-border-color: #23292d;
+--bs-btn-line-height: 0;
+bs-btn-font-size: 20px;
+}
+
+.flex-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+
